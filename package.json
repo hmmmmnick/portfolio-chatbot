@@ -1,0 +1,10 @@
+{
+    "name": "ambesh-mishra-portfolio",
+    "version": "1.0.0",
+    "description": "Personal Portfolio Website with API-Based Chatbot Integration for Ambesh Mishra",
+    "main": "index.html",
+    "scripts": {
+      "start": "npx serve ."
+    },
+    "dependencies": {}
+  }

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ambesh Mishra | AI & ML Engineer | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-accent">&lt;</span>Ambesh Mishra<span class="logo-accent">/&gt;</span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About Me</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button class="chat-nav-btn" id="open-chat-nav" aria-label="Open AI Assistant">
+          ✨ Ask AI
+        </button>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Light / Dark Mode Toggle (Task 3) -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+          <span class="theme-icon sun-icon">☀️</span>
+          <span class="theme-icon moon-icon">🌙</span>
+        </button>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section 1: Home / Hero -->
+    <section id="home" class="hero-section">
+      <div class="hero-container">
+        <div class="hero-badge">🚀 AI & Machine Learning Specialization • JECRC University</div>
+        <h1 class="hero-title">
+          Hi, I'm <span class="highlight-text">Ambesh Mishra</span>
+        </h1>
+        <p class="hero-subtitle">
+          B.Tech in Computer Science and Engineering (AI & ML). Building modern software solutions, machine learning models, and interactive web applications using Python, JavaScript, and modern AI tooling.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View My Projects</a>
+          <button id="hero-chat-trigger" class="btn btn-secondary">💬 Chat with My AI</button>
+          <a href="https://github.com/hmmmmnick" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            GitHub (@hmmmmnick)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: About Me (Task 1) -->
+    <section id="about" class="about-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">Background</span>
+          <h2 class="section-title">About Me</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-image-wrapper">
+            <img 
+              src="https://images.unsplash.com/photo-1534972195531-a756b1129f63?auto=format&fit=crop&w=600&q=80" 
+              alt="Profile photograph of Ambesh Mishra" 
+              class="about-img" 
+              id="profile-img"
+            />
+            <p class="img-caption">Ambesh Mishra • Student Developer</p>
+          </div>
+          <div class="about-content">
+            <h3>Passionate about Intelligent Systems & Clean Engineering</h3>
+            <p>
+              I am an undergraduate student pursuing my <strong>B.Tech in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning</strong> at <strong>JECRC University</strong>. 
+            </p>
+            <p>
+              My academic and project work combines strong computer science fundamentals — Data Structures, Algorithms, Object-Oriented Design — with practical experience in Python scripting, full-stack web integration, and AI-assisted workflows like Cursor AI.
+            </p>
+            <div class="education-card">
+              <div class="edu-icon">🎓</div>
+              <div>
+                <h4>B.Tech in Computer Science and Engineering (AI & ML)</h4>
+                <p class="edu-sub">JECRC University, Jaipur • 2023 - Present</p>
+                <p class="edu-desc">Coursework: Machine Learning Foundations, Data Structures & Algorithms, Python Programming, Database Management, and Full-Stack Web Development.</p>
+              </div>
+            </div>
+            <div class="stats-row">
+              <div class="stat-box">
+                <span class="stat-num">5</span>
+                <span class="stat-label">Core Projects</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">AI & ML</span>
+                <span class="stat-label">Specialization</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">Code Transparency</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Technical Skills -->
+    <section id="skills" class="skills-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">Capabilities</span>
+          <h2 class="section-title">Technical Skills</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <div class="skill-cat-header">
+              <span class="skill-icon">🐍</span>
+              <h3>Languages & Foundations</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-badge">Python</span>
+              <span class="skill-badge">JavaScript (ES6+)</span>
+              <span class="skill-badge">HTML5 & CSS3</span>
+              <span class="skill-badge">SQL</span>
+              <span class="skill-badge">Data Structures</span>
+              <span class="skill-badge">Algorithms</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-cat-header">
+              <span class="skill-icon">🤖</span>
+              <h3>AI, ML & Developer Tools</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-badge">Cursor AI</span>
+              <span class="skill-badge">LLM APIs (Gemini)</span>
+              <span class="skill-badge">Prompt Grounding</span>
+              <span class="skill-badge">Git & GitHub</span>
+              <span class="skill-badge">VS Code</span>
+              <span class="skill-badge">PEP 8 Standards</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-cat-header">
+              <span class="skill-icon">🌐</span>
+              <h3>Web & Deployment</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-badge">Vercel Deployment</span>
+              <span class="skill-badge">Serverless Functions</span>
+              <span class="skill-badge">RESTful APIs</span>
+              <span class="skill-badge">DOM Manipulation</span>
+              <span class="skill-badge">Local Storage</span>
+              <span class="skill-badge">Responsive Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Projects (Task 2 & 3: Search, Filter, All 5 Projects) -->
+    <section id="projects" class="projects-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">Portfolio Showcase</span>
+          <h2 class="section-title">My Projects</h2>
+          <p class="section-desc">Search or filter through the five required coursework projects developed across our lectures.</p>
+        </div>
+
+        <!-- Search & Filter Controls -->
+        <div class="search-filter-wrapper">
+          <div class="search-input-box">
+            <span class="search-icon">🔍</span>
+            <input 
+              type="text" 
+              id="project-search" 
+              placeholder="Search by name or technology (e.g. Python, Quiz, Book)..." 
+              autocomplete="off"
+            />
+            <button id="clear-search" class="clear-btn" aria-label="Clear search">&times;</button>
+          </div>
+          
+          <div class="filter-buttons" id="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Projects (5)</button>
+            <button class="filter-btn" data-filter="python">Python</button>
+            <button class="filter-btn" data-filter="web">Web & JS</button>
+            <button class="filter-btn" data-filter="ai">AI & Cursor</button>
+          </div>
+        </div>
+
+        <!-- Projects Grid (All 5 mandatory projects) -->
+        <div class="projects-grid" id="projects-grid">
+          
+          <!-- Project 1 -->
+          <article class="project-card" data-category="python" data-keywords="python programs collection factorial fibonacci structure dictionary recursion algorithm">
+            <div class="project-card-header">
+              <div class="project-icon">🔢</div>
+              <span class="project-type">Python Collection</span>
+            </div>
+            <h3 class="project-title">Python Programs Collection</h3>
+            <p class="project-description">
+              A structured collection of core mathematical and data transformation algorithms: recursive and iterative Factorial, Fibonacci series generators, and a custom Structure-to-Dictionary data serialization utility with updated README documentation.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Algorithms</span>
+              <span class="tech-tag">Data Structures</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/hmmmmnick/python-programs-collection" target="_blank" rel="noopener noreferrer" class="link-btn github-link">
+                GitHub Repo ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card" data-category="python ai" data-keywords="messy python code improvement ai refactoring clean code pep8 cursor optimization">
+            <div class="project-card-header">
+              <div class="project-icon">⚡</div>
+              <span class="project-type">Code Optimization</span>
+            </div>
+            <h3 class="project-title">Messy Python Code Improvement</h3>
+            <p class="project-description">
+              Refactored an unformatted, tightly coupled legacy Python script using AI assistance. Transformed monolithic logic into modular functions adhering strictly to PEP 8 standards, adding type hints and structured exception handling.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">AI Refactoring</span>
+              <span class="tech-tag">PEP 8</span>
+              <span class="tech-tag">Clean Code</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/hmmmmnick/messy-python-code-improvement" target="_blank" rel="noopener noreferrer" class="link-btn github-link">
+                GitHub Repo ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card" data-category="ai python" data-keywords="bug fixing cursor ai debugging stack trace logic error unit tests">
+            <div class="project-card-header">
+              <div class="project-icon">🛠️</div>
+              <span class="project-type">Debugging with Cursor</span>
+            </div>
+            <h3 class="project-title">Bug Fixing Using Cursor AI</h3>
+            <p class="project-description">
+              Diagnosed and resolved critical runtime and edge-case boundary errors in an intentionally buggy program using Cursor AI. Performed structured root-cause analysis, resolved index off-by-one errors, and added regression tests.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag">Cursor AI</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Debugging</span>
+              <span class="tech-tag">Root Cause Analysis</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/hmmmmnick/bug-fixing-cursor-ai" target="_blank" rel="noopener noreferrer" class="link-btn github-link">
+                GitHub Repo ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card" data-category="web" data-keywords="interactive quiz application lecture 10 javascript html css dom score timer">
+            <div class="project-card-header">
+              <div class="project-icon">🎯</div>
+              <span class="project-type">Lecture 10 Project</span>
+            </div>
+            <h3 class="project-title">Interactive Quiz Application</h3>
+            <p class="project-description">
+              A dynamic browser quiz application built with vanilla JavaScript. Features randomized multiple-choice questions, real-time score calculation, immediate question feedback, and an intuitive result summary.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">DOM Manipulation</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/hmmmmnick/interactive-quiz-app" target="_blank" rel="noopener noreferrer" class="link-btn github-link">
+                GitHub Repo ↗
+              </a>
+              <a href="https://hmmmmnick-quiz-app.vercel.app" target="_blank" rel="noopener noreferrer" class="link-btn live-link">
+                Live App ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="project-card" data-category="web" data-keywords="book reading list application lecture 11 localstorage deployed library tracker crud">
+            <div class="project-card-header">
+              <div class="project-icon">📚</div>
+              <span class="project-type">Lecture 11 Project</span>
+            </div>
+            <h3 class="project-title">Book Reading List Application</h3>
+            <p class="project-description">
+              A responsive book tracking application developed in Lecture 11. Enables users to add books, toggle read/unread status, record personal ratings, and persist data across browser refreshes via the Web Storage API.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Web Storage API</span>
+              <span class="tech-tag">Responsive UI</span>
+              <span class="tech-tag">Vercel</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/hmmmmnick/book-reading-list-app" target="_blank" rel="noopener noreferrer" class="link-btn github-link">
+                GitHub Repo ↗
+              </a>
+              <a href="https://hmmmmnick-reading-list.vercel.app" target="_blank" rel="noopener noreferrer" class="link-btn live-link">
+                Live App ↗
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <div id="no-results" class="no-results hidden">
+          <p>No projects match your search query. Try searching for <strong>"Python"</strong>, <strong>"Quiz"</strong>, or <strong>"Book"</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Contact Information -->
+    <section id="contact" class="contact-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">Get in Touch</span>
+          <h2 class="section-title">Contact Information</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Let's Connect</h3>
+            <p>
+              I am open to discussions regarding AI/ML projects, software development internships, and collaborative research. Reach out directly or check out my repositories.
+            </p>
+            <ul class="contact-list">
+              <li>
+                <span class="c-icon">🎓</span>
+                <div>
+                  <strong>University</strong>
+                  <p>JECRC University, Jaipur (B.Tech CSE - AI & ML)</p>
+                </div>
+              </li>
+              <li>
+                <span class="c-icon">🐙</span>
+                <div>
+                  <strong>GitHub Profile</strong>
+                  <a href="https://github.com/hmmmmnick" target="_blank" rel="noopener noreferrer">github.com/hmmmmnick</a>
+                </div>
+              </li>
+              <li>
+                <span class="c-icon">📧</span>
+                <div>
+                  <strong>Email</strong>
+                  <a href="mailto:ambesh.mishra@jecrcu.edu.in">ambesh.mishra@jecrcu.edu.in</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <form class="contact-form" id="contact-form" onsubmit="event.preventDefault(); alert('Thank you, Ambesh will get back to you shortly!');">
+            <div class="form-group">
+              <label for="contact-name">Your Name</label>
+              <input type="text" id="contact-name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Your Email</label>
+              <input type="email" id="contact-email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" rows="4" placeholder="Hi Ambesh, I would like to discuss..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Section 6: AI Portfolio Chatbot Widget (Task 6) -->
+  <aside class="chatbot-wrapper" id="chatbot-wrapper">
+    <!-- Floating Launcher -->
+    <button id="chatbot-toggle-btn" class="chatbot-launcher" aria-label="Open AI Assistant">
+      <span class="launcher-icon">🤖</span>
+      <span class="launcher-label">Ask Ambesh's AI</span>
+    </button>
+
+    <!-- Chat Window Container -->
+    <div id="chatbot-window" class="chatbot-window hidden" role="dialog" aria-labelledby="chat-heading">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <span class="bot-avatar">🤖</span>
+          <div>
+            <h3 id="chat-heading">Ambesh's AI Assistant</h3>
+            <span class="bot-status"><span class="status-dot"></span> Grounded in Portfolio Data</span>
+          </div>
+        </div>
+        <button id="chatbot-close-btn" class="chat-close-btn" aria-label="Close Chat">&times;</button>
+      </div>
+
+      <!-- Quick prompts directly matching assessment rubric -->
+      <div class="chat-suggestions">
+        <button class="suggestion-chip" data-prompt="Who are you and what are your skills?">Who are you?</button>
+        <button class="suggestion-chip" data-prompt="What projects have you completed?">Projects List</button>
+        <button class="suggestion-chip" data-prompt="Explain your Python programs.">Python Programs</button>
+        <button class="suggestion-chip" data-prompt="What was corrected in the buggy code project?">Bug Fixing Project</button>
+        <button class="suggestion-chip" data-prompt="How does the reading list work?">Reading List App</button>
+        <button class="suggestion-chip" data-prompt="Where is your GitHub?">GitHub Link</button>
+      </div>
+
+      <!-- Messages Body -->
+      <div class="chat-messages" id="chat-messages">
+        <div class="chat-bubble bot-bubble">
+          Hello! I am Ambesh Mishra's portfolio assistant. Ask me about his education at JECRC University, his AI & ML specialization, his 5 projects, or his GitHub!
+        </div>
+      </div>
+
+      <!-- Chat Input Area -->
+      <form class="chat-input-bar" id="chat-form">
+        <input 
+          type="text" 
+          id="chat-input" 
+          placeholder="Ask a question about Ambesh..." 
+          autocomplete="off" 
+          required 
+        />
+        <button type="submit" id="chat-send-btn" class="chat-send-btn" aria-label="Send message">
+          ➤
+        </button>
+      </form>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>© 2026 Ambesh Mishra • JECRC University • Built with Cursor AI, HTML, CSS, JavaScript & Vercel</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
