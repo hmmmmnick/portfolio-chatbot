@@ -4,25 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ambesh Mishra | AI & ML Engineer | Portfolio</title>
+  
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css" />
+  
+  <!-- Google Fonts Preconnect & Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" 
+    rel="stylesheet"
+  />
 </head>
 <body>
-  <!-- Top Scroll Progress Indicator -->
+
+  <!-- ============================================================
+       TOP SCROLL PROGRESS INDICATOR
+       ============================================================ -->
   <div class="scroll-progress-bar" id="scroll-progress"></div>
 
-  <!-- Background Animated Glow Spheres -->
+  <!-- Background Decorative Ambient Glows -->
   <div class="ambient-glow glow-1"></div>
   <div class="ambient-glow glow-2"></div>
   <div class="ambient-glow glow-3"></div>
 
-  <!-- Navigation Header -->
+  <!-- ============================================================
+       NAVIGATION HEADER
+       ============================================================ -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
+      
+      <!-- Brand Logo with Custom SVG -->
       <a href="#home" class="nav-logo" aria-label="Ambesh Mishra Home">
-        <!-- Custom High-Tech SVG Logo -->
         <div class="logo-symbol">
           <svg width="34" height="34" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="40" height="40" rx="10" fill="url(#logo-grad)" fill-opacity="0.15" stroke="url(#logo-grad)" stroke-width="1.5"/>
@@ -40,6 +53,7 @@
         <span class="logo-text">Ambesh<span class="logo-accent">.ai</span></span>
       </a>
 
+      <!-- Desktop Navigation Menu -->
       <nav class="nav-menu" id="nav-menu">
         <a href="#home" class="nav-link active">Home</a>
         <a href="#about" class="nav-link">About Me</a>
@@ -51,72 +65,96 @@
         </button>
       </nav>
 
+      <!-- Theme Controls & Mobile Drawer Toggle -->
       <div class="nav-actions">
-        <!-- Light / Dark Mode Toggle -->
         <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
           <span class="theme-icon sun-icon">☀️</span>
           <span class="theme-icon moon-icon">🌙</span>
         </button>
         <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
+
     </div>
   </header>
 
   <main>
-    <!-- Section 1: Home / Hero -->
+
+    <!-- ============================================================
+         SECTION 1: HERO & TERMINAL PREVIEW
+         ============================================================ -->
     <section id="home" class="hero-section">
       <div class="hero-container">
+
+        <!-- Left Column: Biography & Action Buttons -->
         <div class="hero-copy reveal">
-          <div class="hero-copy">
-            <div class="hero-badge">
-              <span class="badge-pulse"></span>
-              Open to internships · AI &amp; ML · JECRC University
-            </div>
+          
+          <div class="hero-badge">
+            <span class="badge-pulse"></span>
+            Open to internships · AI &amp; ML · JECRC University
+          </div>
+          
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Ambesh Mishra</span>
+          </h1>
+          
+          <p class="hero-role">
+            B.Tech CSE student building intelligent software &amp; AI-driven web systems.
+          </p>
+          
+          <p class="hero-subtitle">
+            Specializing in Artificial Intelligence and Machine Learning. I ship clean software, train models, and design interactive applications using Python, JavaScript, and modern AI tooling.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary btn-hero-main">
+              <span>View Projects</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
             
-            <h1 class="hero-title">
-              Hi, I'm <span class="gradient-text">Ambesh Mishra</span>
-            </h1>
-            
-            <p class="hero-role">B.Tech CSE student building intelligent software &amp; AI-driven web systems.</p>
-            <p class="hero-subtitle">
-              Specializing in Artificial Intelligence and Machine Learning. I ship clean software, train models, and design interactive applications using Python, JavaScript, and modern AI tooling.
-            </p>
-  
-            <!-- Sleek Balanced Buttons -->
-            <div class="hero-cta">
-              <a href="#projects" class="btn btn-primary btn-hero-main">
-                <span>View Projects</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <div class="hero-cta-sub">
+              <button id="hero-chat-trigger" class="btn btn-secondary">
+                <span>💬 Ask AI</span>
+              </button>
+              
+              <a 
+                href="https://github.com/hmmmmnick" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn btn-secondary"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>GitHub</span>
               </a>
-              <div class="hero-cta-sub">
-                <button id="hero-chat-trigger" class="btn btn-secondary">
-                  <span>💬 Ask AI</span>
-                </button>
-                <a href="https://github.com/hmmmmnick" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                  <span>GitHub</span>
-                </a>
-              </div>
-            </div>
-  
-            <!-- Balanced Core Stack -->
-            <div class="hero-stack-wrapper">
-              <span class="hero-stack-label">Core Stack:</span>
-              <ul class="hero-stack" aria-label="Core technologies">
-                <li><span class="stack-dot"></span>Python</li>
-                <li><span class="stack-dot"></span>JavaScript</li>
-                <li><span class="stack-dot"></span>HTML &amp; CSS</li>
-                <li><span class="stack-dot"></span>Cursor AI</li>
-                <li><span class="stack-dot"></span>Vercel</li>
-              </ul>
             </div>
           </div>
 
-        <!-- Stylish MacOS IDE Window -->
+          <!-- Core Technologies Stack -->
+          <div class="hero-stack-wrapper">
+            <span class="hero-stack-label">Core Stack:</span>
+            <ul class="hero-stack" aria-label="Core technologies">
+              <li><span class="stack-dot"></span>Python</li>
+              <li><span class="stack-dot"></span>JavaScript</li>
+              <li><span class="stack-dot"></span>HTML &amp; CSS</li>
+              <li><span class="stack-dot"></span>Cursor AI</li>
+              <li><span class="stack-dot"></span>Vercel</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Interactive MacOS Terminal Preview (Side by Side) -->
         <div class="hero-visual reveal reveal-right" aria-hidden="true">
           <div class="hero-window">
+            
             <div class="hero-window-bar">
               <div class="window-controls">
                 <span class="win-btn win-close"></span>
@@ -128,6 +166,7 @@
                 <span>developer_profile.py</span>
               </div>
             </div>
+            
             <pre class="hero-code"><code><span class="code-comment"># Ambesh Mishra • Portfolio Knowledge Core</span>
 <span class="code-kw">class</span> <span class="code-cls">AIStudent</span>:
     <span class="code-kw">def</span> <span class="code-fn">__init__</span>(<span class="code-self">self</span>):
@@ -140,24 +179,32 @@
 <span class="code-comment"># Initialize developer instance</span>
 ambesh = <span class="code-cls">AIStudent</span>()
 <span class="code-kw">print</span>(<span class="code-str">f"Ready to collaborate: {ambesh.status}!"</span>)</code></pre>
+            
             <div class="window-footer">
               <span class="branch-pill">⌥ main</span>
               <span class="status-ok">● Python 3.11</span>
               <span class="utf-info">UTF-8</span>
             </div>
+
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- Section 2: About Me (Task 1) -->
+    <!-- ============================================================
+         SECTION 2: ABOUT ME & EDUCATION (TASK 1)
+         ============================================================ -->
     <section id="about" class="about-section">
       <div class="section-container">
+        
         <div class="section-header reveal">
           <span class="section-tag">Background</span>
           <h2 class="section-title">About Me</h2>
         </div>
+        
         <div class="about-grid">
+          
           <div class="about-image-wrapper reveal reveal-left">
             <div class="avatar-card">
               <img 
@@ -172,22 +219,29 @@ ambesh = <span class="code-cls">AIStudent</span>()
             </div>
             <p class="img-caption">Ambesh Mishra • Student Developer</p>
           </div>
+          
           <div class="about-content reveal reveal-right">
             <h3>Passionate about Intelligent Systems &amp; Clean Engineering</h3>
+            
             <p>
               I am an undergraduate student pursuing my <strong>B.Tech in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning</strong> at <strong>JECRC University</strong>. 
             </p>
+            
             <p>
               My academic and project work combines strong computer science fundamentals — Data Structures, Algorithms, Object-Oriented Design — with practical experience in Python scripting, full-stack web integration, and AI-assisted workflows like Cursor AI.
             </p>
+            
             <div class="education-card">
               <div class="edu-icon">🎓</div>
               <div>
                 <h4>B.Tech in Computer Science and Engineering (AI &amp; ML)</h4>
                 <p class="edu-sub">JECRC University, Jaipur • 2025 - Present</p>
-                <p class="edu-desc">Coursework: Machine Learning Foundations, Data Structures &amp; Algorithms, Python Programming, Database Management, and Full-Stack Web Development.</p>
+                <p class="edu-desc">
+                  Coursework: Machine Learning Foundations, Data Structures &amp; Algorithms, Python Programming, Database Management, and Full-Stack Web Development.
+                </p>
               </div>
             </div>
+            
             <div class="stats-row">
               <div class="stat-box">
                 <span class="stat-num">5</span>
@@ -202,19 +256,27 @@ ambesh = <span class="code-cls">AIStudent</span>()
                 <span class="stat-label">Code Transparency</span>
               </div>
             </div>
+
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- Section 3: Technical Skills -->
+    <!-- ============================================================
+         SECTION 3: TECHNICAL SKILLS TAXONOMY
+         ============================================================ -->
     <section id="skills" class="skills-section">
       <div class="section-container">
+        
         <div class="section-header reveal">
           <span class="section-tag">Capabilities</span>
           <h2 class="section-title">Technical Skills</h2>
         </div>
+        
         <div class="skills-grid">
+          
+          <!-- Category 1: Languages & Foundations -->
           <div class="skill-category reveal reveal-scale">
             <div class="skill-cat-header">
               <span class="skill-icon">🐍</span>
@@ -230,6 +292,7 @@ ambesh = <span class="code-cls">AIStudent</span>()
             </div>
           </div>
 
+          <!-- Category 2: AI, ML & Tools -->
           <div class="skill-category reveal reveal-scale">
             <div class="skill-cat-header">
               <span class="skill-icon">🤖</span>
@@ -245,6 +308,7 @@ ambesh = <span class="code-cls">AIStudent</span>()
             </div>
           </div>
 
+          <!-- Category 3: Web & Cloud Deployment -->
           <div class="skill-category reveal reveal-scale">
             <div class="skill-cat-header">
               <span class="skill-icon">🌐</span>
@@ -259,17 +323,24 @@ ambesh = <span class="code-cls">AIStudent</span>()
               <span class="skill-badge">Responsive Design</span>
             </div>
           </div>
+
         </div>
+
       </div>
     </section>
 
-    <!-- Section 4: Projects (Task 2 & 3: Search, Filter, All 5 Projects) -->
+    <!-- ============================================================
+         SECTION 4: PROJECTS SHOWCASE (TASKS 2 & 3: SEARCH, FILTER & 5 PROJECTS)
+         ============================================================ -->
     <section id="projects" class="projects-section">
       <div class="section-container">
+        
         <div class="section-header reveal">
           <span class="section-tag">Portfolio Showcase</span>
           <h2 class="section-title">My Projects</h2>
-          <p class="section-desc">Search or filter through the five required coursework projects developed across our lectures.</p>
+          <p class="section-desc">
+            Search or filter through the five required coursework projects developed across our lectures.
+          </p>
         </div>
 
         <!-- Search & Filter Controls -->
@@ -293,124 +364,199 @@ ambesh = <span class="code-cls">AIStudent</span>()
           </div>
         </div>
 
-        <!-- Projects Grid (All 5 mandatory projects) -->
+        <!-- Projects Grid Container -->
         <div class="projects-grid" id="projects-grid">
           
-          <!-- Project 1 -->
-          <article class="project-card reveal reveal-scale" data-category="python" data-keywords="python programs collection factorial fibonacci structure dictionary recursion algorithm">
+          <!-- Project 1: Python Programs Collection -->
+          <article 
+            class="project-card reveal reveal-scale" 
+            data-category="python" 
+            data-keywords="python programs collection factorial fibonacci structure dictionary recursion algorithm"
+          >
             <div class="project-card-header">
               <div class="project-icon">🔢</div>
               <span class="project-type">Python Collection</span>
             </div>
+            
             <h3 class="project-title">Python Programs Collection</h3>
+            
             <p class="project-description">
               A structured collection of core mathematical and data transformation algorithms: recursive and iterative Factorial, Fibonacci series generators, and a custom Structure-to-Dictionary data serialization utility with updated README documentation.
             </p>
+            
             <div class="project-tech-stack">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">Algorithms</span>
               <span class="tech-tag">Data Structures</span>
             </div>
+            
             <div class="project-links">
-              <a href="https://github.com/hmmmmnick/python-programs-collection" target="_blank" rel="noopener noreferrer" class="btn btn-secondary link-btn github-link">
+              <a 
+                href="https://github.com/hmmmmnick/python-programs-collection" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn btn-secondary link-btn github-link"
+              >
                 GitHub Repo ↗
               </a>
             </div>
           </article>
 
-          <!-- Project 2 -->
-          <article class="project-card reveal reveal-scale" data-category="python ai" data-keywords="messy python code improvement ai refactoring clean code pep8 cursor optimization">
+          <!-- Project 2: Messy Python Code Improvement -->
+          <article 
+            class="project-card reveal reveal-scale" 
+            data-category="python ai" 
+            data-keywords="messy python code improvement ai refactoring clean code pep8 cursor optimization"
+          >
             <div class="project-card-header">
               <div class="project-icon">⚡</div>
               <span class="project-type">Code Optimization</span>
             </div>
+            
             <h3 class="project-title">Messy Python Code Improvement</h3>
+            
             <p class="project-description">
               Refactored an unformatted, tightly coupled legacy Python script using AI assistance. Transformed monolithic logic into modular functions adhering strictly to PEP 8 standards, adding type hints and structured exception handling.
             </p>
+            
             <div class="project-tech-stack">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">AI Refactoring</span>
               <span class="tech-tag">PEP 8</span>
               <span class="tech-tag">Clean Code</span>
             </div>
+            
             <div class="project-links">
-              <a href="https://github.com/hmmmmnick/messy-python-code-improvement" target="_blank" rel="noopener noreferrer" class="btn btn-secondary link-btn github-link">
+              <a 
+                href="https://github.com/hmmmmnick/messy-python-code-improvement" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn btn-secondary link-btn github-link"
+              >
                 GitHub Repo ↗
               </a>
             </div>
           </article>
 
-          <!-- Project 3 -->
-          <article class="project-card reveal reveal-scale" data-category="ai python" data-keywords="bug fixing cursor ai debugging stack trace logic error unit tests">
+          <!-- Project 3: Bug Fixing Using Cursor AI (Lecture 8) -->
+          <article 
+            class="project-card reveal reveal-scale" 
+            data-category="ai python" 
+            data-keywords="bug fixing cursor ai debugging stack trace logic error unit tests"
+          >
             <div class="project-card-header">
               <div class="project-icon">🛠️</div>
               <span class="project-type">Debugging with Cursor</span>
             </div>
+            
             <h3 class="project-title">Bug Fixing Using Cursor AI</h3>
+            
             <p class="project-description">
               Diagnosed and resolved critical runtime and edge-case boundary errors in an intentionally buggy program using Cursor AI. Performed structured root-cause analysis, resolved index off-by-one errors, and added regression tests.
             </p>
+            
             <div class="project-tech-stack">
               <span class="tech-tag">Cursor AI</span>
               <span class="tech-tag">Python</span>
               <span class="tech-tag">Debugging</span>
               <span class="tech-tag">Root Cause Analysis</span>
             </div>
+            
             <div class="project-links">
-              <a href="https://github.com/hmmmmnick/bug-fixing-cursor-ai" target="_blank" rel="noopener noreferrer" class="btn btn-secondary link-btn github-link">
+              <a 
+                href="https://github.com/hmmmmnick/bug-fixing-cursor-ai" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn btn-secondary link-btn github-link"
+              >
                 GitHub Repo ↗
               </a>
             </div>
           </article>
 
-          <!-- Project 4 (Interactive Quiz Application) -->
-          <article class="project-card reveal reveal-scale" data-category="web" data-keywords="interactive quiz application lecture 10 javascript html css dom score timer">
+          <!-- Project 4: Interactive Quiz Application (Lecture 10) -->
+          <article 
+            class="project-card reveal reveal-scale" 
+            data-category="web" 
+            data-keywords="interactive quiz application lecture 10 javascript html css dom score timer"
+          >
             <div class="project-card-header">
               <div class="project-icon">🎯</div>
               <span class="project-type">Lecture 10 Project</span>
             </div>
+            
             <h3 class="project-title">Interactive Quiz Application</h3>
+            
             <p class="project-description">
               A dynamic browser quiz application built with vanilla JavaScript. Features randomized multiple-choice questions, real-time score calculation, immediate question feedback, and an intuitive result summary.
             </p>
+            
             <div class="project-tech-stack">
               <span class="tech-tag">JavaScript</span>
               <span class="tech-tag">HTML5</span>
               <span class="tech-tag">CSS3</span>
               <span class="tech-tag">DOM Manipulation</span>
             </div>
+            
             <div class="project-links">
-              <a href="https://github.com/hmmmmnick/interactive-quiz-app" target="_blank" rel="noopener noreferrer" class="btn btn-secondary link-btn github-link">
+              <a 
+                href="https://github.com/hmmmmnick/interactive-quiz-app" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn btn-secondary link-btn github-link"
+              >
                 GitHub Repo ↗
               </a>
-              <a href="https://portfolio-chatbot-cgrt.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary link-btn live-link">
+              <a 
+                href="https://portfolio-chatbot-cgrt.vercel.app/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn btn-primary link-btn live-link"
+              >
                 Live App ↗
               </a>
             </div>
           </article>
 
-          <!-- Project 5 (Book Reading List Application) -->
-          <article class="project-card reveal reveal-scale" data-category="web" data-keywords="book reading list application lecture 11 localstorage deployed library tracker crud react typescript">
+          <!-- Project 5: Book Reading List Application (Lecture 11) -->
+          <article 
+            class="project-card reveal reveal-scale" 
+            data-category="web" 
+            data-keywords="book reading list application lecture 11 localstorage deployed library tracker crud react typescript"
+          >
             <div class="project-card-header">
               <div class="project-icon">📚</div>
               <span class="project-type">Lecture 11 Project</span>
             </div>
+            
             <h3 class="project-title">Book Reading List Application</h3>
+            
             <p class="project-description">
               A responsive book tracking application developed in Lecture 11. Enables users to add books, toggle read/unread status, record personal ratings, and persist data across browser refreshes via the Web Storage API.
             </p>
+            
             <div class="project-tech-stack">
               <span class="tech-tag">React &amp; Vite</span>
               <span class="tech-tag">TypeScript</span>
               <span class="tech-tag">Tailwind CSS</span>
               <span class="tech-tag">LocalStorage</span>
             </div>
+            
             <div class="project-links">
-              <a href="https://github.com/hmmmmnick/Readinglistapp" target="_blank" rel="noopener noreferrer" class="btn btn-secondary link-btn github-link">
+              <a 
+                href="https://github.com/hmmmmnick/Readinglistapp" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn btn-secondary link-btn github-link"
+              >
                 GitHub Repo ↗
               </a>
-              <a href="https://portfolio-chatbot-vdlr.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary link-btn live-link">
+              <a 
+                href="https://portfolio-chatbot-vdlr.vercel.app/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn btn-primary link-btn live-link"
+              >
                 Live App ↗
               </a>
             </div>
@@ -418,20 +564,27 @@ ambesh = <span class="code-cls">AIStudent</span>()
 
         </div>
 
+        <!-- No Matching Results Message -->
         <div id="no-results" class="no-results hidden">
           <p>No projects match your search query. Try searching for <strong>"Python"</strong>, <strong>"Quiz"</strong>, or <strong>"Book"</strong>.</p>
         </div>
+
       </div>
     </section>
 
-    <!-- Section 5: Contact Information -->
+    <!-- ============================================================
+         SECTION 5: CONTACT & UNIVERSITY DETAILS
+         ============================================================ -->
     <section id="contact" class="contact-section">
       <div class="section-container">
+        
         <div class="section-header reveal">
           <span class="section-tag">Get in Touch</span>
           <h2 class="section-title">Contact Information</h2>
         </div>
+        
         <div class="contact-grid">
+          
           <div class="contact-info reveal reveal-left">
             <h3>Let's Connect</h3>
             <p>
@@ -462,7 +615,11 @@ ambesh = <span class="code-cls">AIStudent</span>()
             </ul>
           </div>
 
-          <form class="contact-form reveal reveal-right" id="contact-form" onsubmit="event.preventDefault(); alert('Thank you, Ambesh will get back to you shortly!');">
+          <form 
+            class="contact-form reveal reveal-right" 
+            id="contact-form" 
+            onsubmit="event.preventDefault(); alert('Thank you, Ambesh will get back to you shortly!');"
+          >
             <div class="form-group">
               <label for="contact-name">Your Name</label>
               <input type="text" id="contact-name" placeholder="John Doe" required />
@@ -477,22 +634,29 @@ ambesh = <span class="code-cls">AIStudent</span>()
             </div>
             <button type="submit" class="btn btn-primary btn-block">Send Message</button>
           </form>
+
         </div>
+
       </div>
     </section>
+
   </main>
 
-  <!-- Section 6: AI Portfolio Chatbot Widget (Task 6) -->
+  <!-- ============================================================
+       SECTION 6: GROUNDED AI PORTFOLIO CHATBOT (TASK 6)
+       ============================================================ -->
   <aside class="chatbot-wrapper" id="chatbot-wrapper">
-    <!-- Floating Launcher with Ripple Effect -->
+    
+    <!-- Floating Launcher Button with Ripple Ring -->
     <button id="chatbot-toggle-btn" class="chatbot-launcher" aria-label="Open AI Assistant">
       <span class="launcher-ripple"></span>
       <span class="launcher-icon">🤖</span>
       <span class="launcher-label">Ask Ambesh's AI</span>
     </button>
 
-    <!-- Chat Window Container -->
+    <!-- Chat Window Modal -->
     <div id="chatbot-window" class="chatbot-window hidden" role="dialog" aria-labelledby="chat-heading">
+      
       <div class="chat-header">
         <div class="chat-header-info">
           <div class="bot-avatar-glow">🤖</div>
@@ -504,7 +668,7 @@ ambesh = <span class="code-cls">AIStudent</span>()
         <button id="chatbot-close-btn" class="chat-close-btn" aria-label="Close Chat">&times;</button>
       </div>
 
-      <!-- Quick prompts directly matching assessment rubric -->
+      <!-- Quick Suggested Prompts Matching Assessment Rubric -->
       <div class="chat-suggestions">
         <button class="suggestion-chip" data-prompt="Who are you and what are your skills?">Who are you?</button>
         <button class="suggestion-chip" data-prompt="What projects have you completed?">Projects List</button>
@@ -514,14 +678,14 @@ ambesh = <span class="code-cls">AIStudent</span>()
         <button class="suggestion-chip" data-prompt="Where is your GitHub?">GitHub Link</button>
       </div>
 
-      <!-- Messages Body -->
+      <!-- Scrollable Chat Messages Container -->
       <div class="chat-messages" id="chat-messages">
         <div class="chat-bubble bot-bubble">
           Hello! I am Ambesh Mishra's portfolio assistant. Ask me about his education at JECRC University, his AI &amp; ML specialization, his 5 projects, or his GitHub!
         </div>
       </div>
 
-      <!-- Chat Input Area -->
+      <!-- Message Input Bar -->
       <form class="chat-input-bar" id="chat-form">
         <input 
           type="text" 
@@ -534,16 +698,20 @@ ambesh = <span class="code-cls">AIStudent</span>()
           ➤
         </button>
       </form>
+
     </div>
   </aside>
 
-  <!-- Footer -->
+  <!-- ============================================================
+       FOOTER & SCRIPTS
+       ============================================================ -->
   <footer class="footer">
     <div class="footer-container">
       <p>© 2026 Ambesh Mishra • JECRC University • Built with Cursor AI, HTML, CSS, JavaScript &amp; Vercel</p>
     </div>
   </footer>
 
+  <!-- Application Logic -->
   <script src="script.js"></script>
 </body>
 </html>
