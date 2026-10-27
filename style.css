@@ -279,7 +279,7 @@
   }
   
   /* ============================================================
-     PILL BUTTONS (ROUNDED LIKE REQUESTED)
+     PILL BUTTONS (ROUNDED)
      ============================================================ */
   .hero-cta {
     display: flex;
@@ -297,7 +297,7 @@
   
   .btn {
     padding: 0.9rem 1.85rem;
-    border-radius: 9999px;          /* FULL PILL SHAPE */
+    border-radius: 9999px;
     font-weight: 800;
     font-size: 0.85rem;
     text-transform: uppercase;
@@ -361,7 +361,7 @@
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     padding: 0.4rem 0.9rem;
-    border-radius: 9999px;         /* FULL PILL SHAPE */
+    border-radius: 9999px;
     display: flex;
     align-items: center;
     gap: 0.45rem;
@@ -385,7 +385,7 @@
   .hero-window {
     background: #11141C;
     border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: var(--radius-md); /* 20px SOFT ROUNDED */
+    border-radius: var(--radius-md);
     box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.35);
     overflow: hidden;
     transition: var(--transition);
@@ -532,7 +532,7 @@
     max-width: 350px;
     height: 350px;
     object-fit: cover;
-    border-radius: var(--radius-md); /* 20px */
+    border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
     box-shadow: var(--card-shadow);
     transition: var(--transition);
@@ -545,7 +545,7 @@
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     padding: 0.45rem 1rem;
-    border-radius: 9999px;         /* PILL SHAPE */
+    border-radius: 9999px;
     font-size: 0.75rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -584,13 +584,12 @@
     font-size: 1.05rem;
   }
   
-  /* Rounded Education Card */
   .education-card {
     display: flex;
     gap: 1.25rem;
     background-color: var(--bg-card);
     padding: 1.5rem;
-    border-radius: var(--radius-md); /* 20px */
+    border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
     margin-bottom: 1.75rem;
     box-shadow: var(--card-shadow);
@@ -612,7 +611,6 @@
     color: var(--text-secondary);
   }
   
-  /* Rounded Stats Block */
   .stats-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -623,7 +621,7 @@
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     padding: 1.35rem 1rem;
-    border-radius: 16px;           /* SOFT ROUNDED */
+    border-radius: 16px;
     text-align: center;
     box-shadow: var(--card-shadow);
     transition: var(--transition);
@@ -655,7 +653,7 @@
   [data-theme="dark"] .stat-label { color: rgba(255, 255, 255, 0.85); }
   
   /* ============================================================
-     SKILLS SECTION (ROUNDED CARDS & PILLS)
+     SKILLS SECTION
      ============================================================ */
   .skills-section {
     background-color: var(--bg-secondary);
@@ -673,7 +671,7 @@
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     padding: 2.25rem;
-    border-radius: var(--radius-md); /* 20px */
+    border-radius: var(--radius-md);
     box-shadow: var(--card-shadow);
     transition: var(--transition);
   }
@@ -706,14 +704,13 @@
     gap: 0.5rem;
   }
   
-  /* Pill Skill Badges */
   .skill-badge {
     background-color: var(--bg-secondary);
     color: var(--text-primary);
     font-size: 0.825rem;
     font-weight: 700;
     padding: 0.45rem 0.95rem;
-    border-radius: 9999px;         /* PILL SHAPE */
+    border-radius: 9999px;
     border: 1px solid var(--border-color);
     transition: var(--transition);
   }
@@ -725,7 +722,7 @@
   }
   
   /* ============================================================
-     PROJECTS SECTION (ROUNDED SEARCH, PILLS, CARDS)
+     PROJECTS SECTION (SEARCH & FILTER)
      ============================================================ */
   .search-filter-wrapper {
     margin-bottom: 3.5rem;
@@ -749,14 +746,13 @@
     color: var(--text-muted);
   }
   
-  /* Full Pill Search Bar */
   .search-input-box input {
     width: 100%;
     padding: 1rem 3rem 1rem 3.4rem;
     border: 1.5px solid var(--border-color);
     background-color: var(--bg-card);
     color: var(--text-primary);
-    border-radius: 9999px;         /* FULL PILL SHAPE */
+    border-radius: 9999px;
     font-size: 0.95rem;
     outline: none;
     box-shadow: var(--card-shadow);
@@ -784,10 +780,9 @@
     justify-content: center;
   }
   
-  /* Pill Filter Chips */
   .filter-btn {
     padding: 0.55rem 1.35rem;
-    border-radius: 9999px;         /* FULL PILL SHAPE */
+    border-radius: 9999px;
     border: 1px solid var(--border-color);
     background-color: var(--bg-card);
     color: var(--text-secondary);
@@ -812,11 +807,10 @@
     gap: 2rem;
   }
   
-  /* Rounded Project Card */
   .project-card {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
-    border-radius: var(--radius-md); /* 20px */
+    border-radius: var(--radius-md);
     padding: 2rem;
     box-shadow: var(--card-shadow);
     display: flex;
@@ -847,7 +841,7 @@
     color: var(--text-primary);
     background-color: var(--bg-secondary);
     padding: 0.3rem 0.85rem;
-    border-radius: 9999px;         /* PILL SHAPE */
+    border-radius: 9999px;
     border: 1px solid var(--border-color);
   }
   
@@ -875,33 +869,35 @@
     margin-bottom: 1.75rem;
   }
   
-  /* Pill Tech Tags */
   .tech-tag {
     font-family: 'Fira Code', monospace;
     font-size: 0.75rem;
     font-weight: 600;
     background-color: var(--bg-secondary);
     padding: 0.3rem 0.75rem;
-    border-radius: 9999px;         /* PILL SHAPE */
+    border-radius: 9999px;
     border: 1px solid var(--border-color);
     color: var(--text-primary);
   }
   
+  /* ============================================================
+     PROJECT LINK BUTTONS (FIXED: TEXT NEVER TURNS BLACK ON HOVER!)
+     ============================================================ */
   .project-links {
     display: flex;
     gap: 0.85rem;
   }
   
-  /* Pill Link Buttons */
   .link-btn {
     font-size: 0.8rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     padding: 0.6rem 1.3rem;
-    border-radius: 9999px;         /* PILL SHAPE */
+    border-radius: 9999px;
     border: 1px solid var(--border-color);
     background-color: var(--bg-secondary);
+    color: var(--text-primary);
     transition: var(--transition);
     display: inline-flex;
     align-items: center;
@@ -910,17 +906,34 @@
   .link-btn:hover {
     border-color: var(--text-primary);
     color: var(--text-primary);
+    background-color: var(--bg-card);
     transform: translateY(-2px);
   }
   
+  /* Live Link Button: White text guaranteed! */
   .live-link {
     background: var(--text-primary);
-    color: var(--bg-primary);
+    color: #ffffff !important;
     border-color: transparent;
   }
   
   .live-link:hover {
-    opacity: 0.9;
+    background: #2a2c33;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    opacity: 1;
+  }
+  
+  [data-theme="dark"] .live-link {
+    background: #1E50FF;
+    color: #ffffff !important;
+  }
+  
+  [data-theme="dark"] .live-link:hover {
+    background: #3B70FF;
+    color: #ffffff !important;
+    box-shadow: 0 6px 20px rgba(30, 80, 255, 0.45);
   }
   
   .no-results {
@@ -934,7 +947,7 @@
   }
   
   /* ============================================================
-     CONTACT SECTION (ROUNDED FORM & INPUTS)
+     CONTACT SECTION
      ============================================================ */
   .contact-grid {
     display: grid;
@@ -961,7 +974,7 @@
   .contact-form {
     background-color: var(--bg-card);
     padding: 2.5rem;
-    border-radius: var(--radius-md); /* 20px */
+    border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
     box-shadow: var(--card-shadow);
   }
@@ -980,7 +993,7 @@
   .form-group input {
     width: 100%;
     padding: 0.9rem 1.25rem;
-    border-radius: 9999px;         /* PILL INPUTS */
+    border-radius: 9999px;
     border: 1px solid var(--border-color);
     background-color: var(--bg-primary);
     color: var(--text-primary);
@@ -992,7 +1005,7 @@
   .form-group textarea {
     width: 100%;
     padding: 1rem 1.25rem;
-    border-radius: 16px;           /* SOFT ROUNDED TEXTAREA */
+    border-radius: 16px;
     border: 1px solid var(--border-color);
     background-color: var(--bg-primary);
     color: var(--text-primary);
@@ -1009,7 +1022,7 @@
   .btn-block { width: 100%; }
   
   /* ============================================================
-     CHATBOT WIDGET (PILL LAUNCHER & ROUNDED SHEET)
+     CHATBOT WIDGET
      ============================================================ */
   .chatbot-wrapper {
     position: fixed;
@@ -1025,7 +1038,7 @@
     background: var(--text-primary);
     color: var(--bg-primary);
     padding: 0.95rem 1.5rem;
-    border-radius: 9999px;         /* FULL PILL SHAPE */
+    border-radius: 9999px;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
     font-weight: 800;
     font-size: 0.85rem;
@@ -1052,7 +1065,7 @@
     width: 400px;
     height: 550px;
     background-color: var(--bg-card);
-    border-radius: var(--radius-md); /* 20px */
+    border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
     box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.35);
     display: flex;
@@ -1118,14 +1131,13 @@
     border-bottom: 1px solid var(--border-color);
   }
   
-  /* Pill Suggestion Chips */
   .suggestion-chip {
     font-size: 0.75rem;
     font-weight: 700;
     padding: 0.4rem 0.9rem;
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-color);
-    border-radius: 9999px;         /* PILL SHAPE */
+    border-radius: 9999px;
     color: var(--text-secondary);
     flex-shrink: 0;
     transition: var(--transition);
@@ -1147,11 +1159,10 @@
     background-color: var(--bg-card);
   }
   
-  /* Rounded Chat Bubbles */
   .chat-bubble {
     max-width: 82%;
     padding: 0.85rem 1.15rem;
-    border-radius: 16px;           /* SOFT ROUNDED BUBBLES */
+    border-radius: 16px;
     font-size: 0.885rem;
     line-height: 1.5;
     word-break: break-word;
@@ -1194,7 +1205,7 @@
   .chat-input-bar input {
     flex-grow: 1;
     padding: 0.7rem 1.1rem;
-    border-radius: 9999px;         /* PILL INPUT */
+    border-radius: 9999px;
     border: 1px solid var(--border-color);
     background-color: var(--bg-card);
     color: var(--text-primary);
@@ -1206,7 +1217,7 @@
     background: var(--text-primary);
     color: var(--bg-primary);
     padding: 0 1.3rem;
-    border-radius: 9999px;         /* PILL SEND BUTTON */
+    border-radius: 9999px;
     font-weight: 800;
     transition: var(--transition);
   }
