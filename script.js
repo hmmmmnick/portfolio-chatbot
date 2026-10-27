@@ -67,16 +67,30 @@ themeToggleBtn.addEventListener('click', () => {
   localStorage.setItem('ambesh-portfolio-theme', newTheme);
 });
 
-// Mobile menu toggle
+// Mobile menu toggle with animated icon and auto-close
 const mobileToggle = document.getElementById('mobile-toggle');
 const navMenu = document.getElementById('nav-menu');
+
 if (mobileToggle && navMenu) {
   mobileToggle.addEventListener('click', () => {
+    mobileToggle.classList.toggle('active');
     navMenu.classList.toggle('active');
   });
 
+  // Close menu when tapping any link
   document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => navMenu.classList.remove('active'));
+    link.addEventListener('click', () => {
+      mobileToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+
+  // Close menu if tapping outside
+  document.addEventListener('click', (e) => {
+    if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+      mobileToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+    }
   });
 }
 
