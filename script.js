@@ -56,8 +56,7 @@ revealElements.forEach(el => revealObserver.observe(el));
 // ============================================================
 const themeToggleBtn = document.getElementById('theme-toggle');
 
-const savedTheme = localStorage.getItem('ambesh-portfolio-theme') || 
-  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'dark'); // default dark for high-tech aesthetic
+const savedTheme = localStorage.getItem('ambesh-portfolio-theme') || 'light';
 
 document.documentElement.setAttribute('data-theme', savedTheme);
 
