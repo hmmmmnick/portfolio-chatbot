@@ -2,10 +2,31 @@
    DESIGN SYSTEM & CSS VARIABLES (MODERN OBSIDIAN & NEON)
    ============================================================ */
    :root {
+    --bg-primary: #07090e;
+    --bg-secondary: #0d121c;
+    --bg-card: rgba(17, 24, 39, 0.75);
+    --bg-card-hover: rgba(26, 36, 56, 0.9);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent-color: #38bdf8;
+    --accent-hover: #60a5fa;
+    --accent-light: rgba(56, 189, 248, 0.12);
+    --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #6366f1 50%, #c084fc 100%);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+    --card-shadow-hover: 0 20px 40px -10px rgba(56, 189, 248, 0.25);
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --transition: all 0.25s ease-in-out;
+  }
+  
+  [data-theme="light"] {
     --bg-primary: #ffffff;
     --bg-secondary: #f8fafc;
-    --bg-card: rgba(255, 255, 255, 0.85);
-    --bg-card-hover: rgba(255, 255, 255, 0.98);
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --bg-card-hover: #ffffff;
     --text-primary: #0f172a;
     --text-secondary: #475569;
     --text-muted: #94a3b8;
@@ -13,30 +34,9 @@
     --accent-hover: #1d4ed8;
     --accent-light: #eff6ff;
     --accent-gradient: linear-gradient(135deg, #2563eb, #6366f1, #a855f7);
-    --border-color: rgba(226, 232, 240, 0.8);
+    --border-color: #e2e8f0;
     --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
     --card-shadow-hover: 0 20px 35px -5px rgba(37, 99, 235, 0.15);
-    --radius-sm: 8px;
-    --radius-md: 14px;
-    --radius-lg: 20px;
-    --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  
-  [data-theme="dark"] {
-    --bg-primary: #07090e;
-    --bg-secondary: #0d121c;
-    --bg-card: rgba(17, 24, 39, 0.65);
-    --bg-card-hover: rgba(26, 36, 56, 0.85);
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    --accent-color: #38bdf8;
-    --accent-hover: #60a5fa;
-    --accent-light: rgba(56, 189, 248, 0.1);
-    --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #6366f1 50%, #c084fc 100%);
-    --border-color: rgba(255, 255, 255, 0.08);
-    --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
-    --card-shadow-hover: 0 20px 40px -10px rgba(56, 189, 248, 0.2);
   }
   
   /* Base Styles */
@@ -51,14 +51,14 @@
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    transition: background-color 0.4s ease, color 0.4s ease;
-    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   body {
     min-height: 100vh;
     line-height: 1.6;
     position: relative;
+    background-color: var(--bg-primary);
     overflow-x: hidden;
   }
   
@@ -85,21 +85,19 @@
     width: 0%;
     background: var(--accent-gradient);
     z-index: 1000;
-    box-shadow: 0 0 10px #38bdf8;
-    transition: width 0.1s ease-out;
+    box-shadow: 0 0 12px #38bdf8;
   }
   
   /* ============================================================
-     AMBIENT GLOW BACKGROUND ORBS
+     AMBIENT GLOWS
      ============================================================ */
   .ambient-glow {
     position: fixed;
     border-radius: 50%;
-    filter: blur(100px);
+    filter: blur(120px);
     pointer-events: none;
-    z-index: 0;
-    opacity: 0.35;
-    transition: var(--transition);
+    z-index: -1;
+    opacity: 0.25;
   }
   
   .glow-1 {
@@ -122,9 +120,9 @@
     width: 350px;
     height: 350px;
     top: 40%;
-    right: 10%;
+    right: 5%;
     background: radial-gradient(circle, #a855f7, transparent 70%);
-    opacity: 0.2;
+    opacity: 0.15;
   }
   
   /* ============================================================
@@ -134,15 +132,15 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(7, 9, 14, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-color);
     transition: var(--transition);
   }
   
-  [data-theme="dark"] .navbar {
-    background-color: rgba(7, 9, 14, 0.75);
+  [data-theme="light"] .navbar {
+    background-color: rgba(255, 255, 255, 0.85);
   }
   
   .nav-container {
@@ -200,39 +198,22 @@
     color: var(--accent-color);
   }
   
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: var(--accent-gradient);
-    transition: width 0.3s ease;
-    border-radius: 2px;
-  }
-  
-  .nav-link:hover::after,
-  .nav-link.active::after {
-    width: 100%;
-  }
-  
   .chat-nav-btn {
     background: var(--accent-gradient);
     color: #ffffff;
-    padding: 0.45rem 1rem;
+    padding: 0.45rem 1.1rem;
     border-radius: 999px;
     font-weight: 700;
     font-size: 0.85rem;
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.35);
     transition: var(--transition);
   }
   
   .chat-nav-btn:hover {
-    transform: translateY(-2px) scale(1.03);
+    transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(56, 189, 248, 0.5);
   }
   
@@ -258,13 +239,13 @@
   
   .theme-toggle-btn:hover {
     border-color: var(--accent-color);
-    transform: rotate(20deg) scale(1.08);
+    transform: scale(1.08);
   }
   
-  [data-theme="dark"] .sun-icon { display: block; }
-  [data-theme="dark"] .moon-icon { display: none; }
-  :root:not([data-theme="dark"]) .sun-icon { display: none; }
-  :root:not([data-theme="dark"]) .moon-icon { display: block; }
+  [data-theme="light"] .sun-icon { display: none; }
+  [data-theme="light"] .moon-icon { display: block; }
+  :root:not([data-theme="light"]) .sun-icon { display: block; }
+  :root:not([data-theme="light"]) .moon-icon { display: none; }
   
   .mobile-toggle {
     display: none;
@@ -280,11 +261,11 @@
   }
   
   /* ============================================================
-     HERO SECTION (SPLIT LAYOUT WITH MACOS CODE WINDOW)
+     HERO SECTION
      ============================================================ */
   .hero-section {
     position: relative;
-    padding: 6rem 1.5rem 5rem;
+    padding: 5.5rem 1.5rem 4.5rem;
     overflow: hidden;
   }
   
@@ -316,14 +297,6 @@
     height: 8px;
     background-color: #10b981;
     border-radius: 50%;
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-    animation: pulseGreen 2s infinite;
-  }
-  
-  @keyframes pulseGreen {
-    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-    70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
   }
   
   .hero-title {
@@ -359,7 +332,7 @@
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    margin-bottom: 2.25rem;
+    margin-bottom: 2rem;
   }
   
   /* Button Component */
@@ -382,7 +355,7 @@
   }
   
   .btn-primary:hover {
-    transform: translateY(-3px) scale(1.02);
+    transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(56, 189, 248, 0.5);
   }
   
@@ -411,7 +384,7 @@
     transform: translateY(-3px);
   }
   
-  /* Core Stack Pills (Fixed!) */
+  /* Stack Pills */
   .hero-stack-wrapper {
     display: flex;
     align-items: center;
@@ -463,7 +436,7 @@
   }
   
   /* ============================================================
-     MACOS CODE WINDOW (HERO VISUAL)
+     MACOS CODE WINDOW
      ============================================================ */
   .hero-visual {
     position: relative;
@@ -480,9 +453,8 @@
   }
   
   .hero-window:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
     border-color: rgba(56, 189, 248, 0.4);
-    box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(56, 189, 248, 0.25);
   }
   
   .hero-window-bar {
@@ -528,7 +500,6 @@
     overflow-x: auto;
   }
   
-  /* Syntax Highlighting */
   .code-comment { color: #64748b; font-style: italic; }
   .code-kw { color: #f43f5e; font-weight: 600; }
   .code-cls { color: #38bdf8; font-weight: 600; }
@@ -550,7 +521,7 @@
   .status-ok { color: #34d399; }
   
   /* ============================================================
-     SECTIONS GENERAL & SCROLL REVEAL ANIMATIONS
+     SECTIONS: ALWAYS 100% VISIBLE (NO OPACITY 0 BUGS!)
      ============================================================ */
   .section-container {
     max-width: 1240px;
@@ -592,37 +563,11 @@
     margin-right: auto;
   }
   
-  /* Scroll Reveal Classes */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  
-  .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .reveal-left {
-    transform: translateX(-40px);
-  }
-  .reveal-left.active {
-    transform: translateX(0);
-  }
-  
-  .reveal-right {
-    transform: translateX(40px);
-  }
-  .reveal-right.active {
-    transform: translateX(0);
-  }
-  
-  .reveal-scale {
-    transform: scale(0.92);
-  }
-  .reveal-scale.active {
-    transform: scale(1);
+  /* Ensure all reveal elements are fully visible by default */
+  .reveal, .reveal-left, .reveal-right, .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   /* ============================================================
@@ -837,7 +782,7 @@
   }
   
   /* ============================================================
-     PROJECTS SECTION (SEARCH & FILTER)
+     PROJECTS SECTION
      ============================================================ */
   .search-filter-wrapper {
     margin-bottom: 3rem;
@@ -934,7 +879,6 @@
     display: flex;
     flex-direction: column;
     transition: var(--transition);
-    position: relative;
   }
   
   .project-card:hover {
@@ -1122,7 +1066,6 @@
   }
   
   .chatbot-launcher {
-    position: relative;
     display: flex;
     align-items: center;
     gap: 0.65rem;
@@ -1134,7 +1077,6 @@
     font-weight: 800;
     font-size: 0.95rem;
     transition: var(--transition);
-    overflow: hidden;
   }
   
   .chatbot-launcher:hover {
@@ -1157,7 +1099,7 @@
     -webkit-backdrop-filter: blur(20px);
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-color);
-    box-shadow: 0 25px 45px -10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 25px 45px -10px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     overflow: hidden;
