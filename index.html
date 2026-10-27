@@ -7,29 +7,52 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Top Scroll Progress Indicator -->
+  <div class="scroll-progress-bar" id="scroll-progress"></div>
+
+  <!-- Background Animated Glow Spheres -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
   <!-- Navigation Header -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#home" class="nav-logo">
-        <span class="logo-accent">&lt;</span>Ambesh Mishra<span class="logo-accent">/&gt;</span>
+      <a href="#home" class="nav-logo" aria-label="Ambesh Mishra Home">
+        <!-- Custom High-Tech SVG Logo -->
+        <div class="logo-symbol">
+          <svg width="34" height="34" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="10" fill="url(#logo-grad)" fill-opacity="0.15" stroke="url(#logo-grad)" stroke-width="1.5"/>
+            <path d="M12 28L20 12L28 28M15 23H25" stroke="url(#logo-grad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="20" cy="12" r="2.5" fill="#38bdf8"/>
+            <defs>
+              <linearGradient id="logo-grad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#38bdf8"/>
+                <stop offset="0.5" stop-color="#6366f1"/>
+                <stop offset="1" stop-color="#a855f7"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">Ambesh<span class="logo-accent">.ai</span></span>
       </a>
 
       <nav class="nav-menu" id="nav-menu">
-        <a href="#home" class="nav-link">Home</a>
+        <a href="#home" class="nav-link active">Home</a>
         <a href="#about" class="nav-link">About Me</a>
         <a href="#skills" class="nav-link">Skills</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#contact" class="nav-link">Contact</a>
         <button class="chat-nav-btn" id="open-chat-nav" aria-label="Open AI Assistant">
-          ✨ Ask AI
+          <span class="sparkle-icon">✨</span> Ask AI
         </button>
       </nav>
 
       <div class="nav-actions">
-        <!-- Light / Dark Mode Toggle (Task 3) -->
+        <!-- Light / Dark Mode Toggle -->
         <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
           <span class="theme-icon sun-icon">☀️</span>
           <span class="theme-icon moon-icon">🌙</span>
@@ -44,58 +67,79 @@
   <main>
     <!-- Section 1: Home / Hero -->
     <section id="home" class="hero-section">
-      <div class="hero-glow" aria-hidden="true"></div>
-      <div class="hero-glow hero-glow-alt" aria-hidden="true"></div>
-      <div class="hero-grid-overlay" aria-hidden="true"></div>
-
       <div class="hero-container">
-        <div class="hero-copy">
+        <div class="hero-copy reveal">
           <div class="hero-badge">
-            <span class="badge-dot" aria-hidden="true"></span>
+            <span class="badge-pulse"></span>
             Open to internships · AI &amp; ML · JECRC University
           </div>
           <h1 class="hero-title">
-            Hi, I'm <span class="highlight-text">Ambesh Mishra</span>
+            Hi, I'm <span class="gradient-text">Ambesh Mishra</span>
           </h1>
-          <p class="hero-role">B.Tech CSE student building intelligent products with Python and the web.</p>
+          <p class="hero-role">B.Tech CSE student building intelligent software &amp; AI-driven web systems.</p>
           <p class="hero-subtitle">
-            Specializing in Artificial Intelligence and Machine Learning. I ship software, train models, and design interactive apps with Python, JavaScript, and modern AI tooling.
+            Specializing in Artificial Intelligence and Machine Learning. I ship software, train models, and design interactive applications using Python, JavaScript, and modern AI tooling.
           </p>
           <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary">View my projects</a>
-            <button id="hero-chat-trigger" class="btn btn-secondary">Chat with my AI</button>
+            <a href="#projects" class="btn btn-primary">
+              <span>View Projects</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <button id="hero-chat-trigger" class="btn btn-secondary">
+              <span>💬 Chat with My AI</span>
+            </button>
             <a href="https://github.com/hmmmmnick" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
               GitHub
             </a>
           </div>
-          <ul class="hero-stack" aria-label="Core technologies">
-            <li>Python</li>
-            <li>JavaScript</li>
-            <li>HTML &amp; CSS</li>
-            <li>Cursor AI</li>
-            <li>Vercel</li>
-          </ul>
+
+          <div class="hero-stack-wrapper">
+            <span class="hero-stack-label">Core Stack:</span>
+            <ul class="hero-stack" aria-label="Core technologies">
+              <li><span class="stack-dot"></span>Python</li>
+              <li><span class="stack-dot"></span>JavaScript</li>
+              <li><span class="stack-dot"></span>HTML5 &amp; CSS3</li>
+              <li><span class="stack-dot"></span>Cursor AI</li>
+              <li><span class="stack-dot"></span>Vercel</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
+        <!-- Stylish MacOS IDE Window -->
+        <div class="hero-visual reveal reveal-right" aria-hidden="true">
           <div class="hero-window">
             <div class="hero-window-bar">
-              <span></span><span></span><span></span>
-              <p>profile.ts</p>
+              <div class="window-controls">
+                <span class="win-btn win-close"></span>
+                <span class="win-btn win-min"></span>
+                <span class="win-btn win-max"></span>
+              </div>
+              <div class="win-tab">
+                <span class="file-icon">⚡</span>
+                <span>developer_profile.py</span>
+              </div>
             </div>
-            <pre class="hero-code"><code><span class="code-kw">const</span> engineer = {
-  name: <span class="code-str">"Ambesh Mishra"</span>,
-  school: <span class="code-str">"JECRC University"</span>,
-  focus: [<span class="code-str">"AI"</span>, <span class="code-str">"ML"</span>, <span class="code-str">"Web"</span>],
-  building: <span class="code-str">"useful software"</span>
-};</code></pre>
+            <pre class="hero-code"><code><span class="code-comment"># Ambesh Mishra • Portfolio Knowledge Core</span>
+<span class="code-kw">class</span> <span class="code-cls">AIStudent</span>:
+    <span class="code-kw">def</span> <span class="code-fn">__init__</span>(<span class="code-self">self</span>):
+        <span class="code-self">self</span>.name = <span class="code-str">"Ambesh Mishra"</span>
+        <span class="code-self">self</span>.university = <span class="code-str">"JECRC University"</span>
+        <span class="code-self">self</span>.degree = <span class="code-str">"B.Tech CSE (AI & ML)"</span>
+        <span class="code-self">self</span>.passions = [<span class="code-str">"Machine Learning"</span>, <span class="code-str">"Python"</span>, <span class="code-str">"AI Chatbots"</span>]
+        <span class="code-self">self</span>.status = <span class="code-str">"Deploying Intelligent Systems"</span>
+
+<span class="code-comment"># Initialize developer instance</span>
+ambesh = <span class="code-cls">AIStudent</span>()
+<span class="code-kw">print</span>(<span class="code-str">f"Ready to collaborate: {ambesh.status}!"</span>)</code></pre>
+            <div class="window-footer">
+              <span class="branch-pill">⌥ main</span>
+              <span class="status-ok">● Python 3.11</span>
+              <span class="utf-info">UTF-8</span>
+            </div>
           </div>
         </div>
       </div>
-
-      <a href="#about" class="hero-scroll" aria-label="Scroll to about">
-        <span>Scroll</span>
-      </a>
     </section>
 
     <!-- Section 2: About Me (Task 1) -->
@@ -107,16 +151,21 @@
         </div>
         <div class="about-grid">
           <div class="about-image-wrapper reveal reveal-left">
-            <img 
-              src="https://images.unsplash.com/photo-1534972195531-a756b1129f63?auto=format&fit=crop&w=600&q=80" 
-              alt="Profile photograph of Ambesh Mishra" 
-              class="about-img" 
-              id="profile-img"
-            />
+            <div class="avatar-card">
+              <img 
+                src="https://images.unsplash.com/photo-1534972195531-a756b1129f63?auto=format&fit=crop&w=600&q=80" 
+                alt="Profile photograph of Ambesh Mishra" 
+                class="about-img" 
+                id="profile-img"
+              />
+              <div class="avatar-badge">
+                <span class="status-live-dot"></span> Active Developer
+              </div>
+            </div>
             <p class="img-caption">Ambesh Mishra • Student Developer</p>
           </div>
           <div class="about-content reveal reveal-right">
-            <h3>Passionate about Intelligent Systems & Clean Engineering</h3>
+            <h3>Passionate about Intelligent Systems &amp; Clean Engineering</h3>
             <p>
               I am an undergraduate student pursuing my <strong>B.Tech in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning</strong> at <strong>JECRC University</strong>. 
             </p>
@@ -126,9 +175,9 @@
             <div class="education-card">
               <div class="edu-icon">🎓</div>
               <div>
-                <h4>B.Tech in Computer Science and Engineering (AI & ML)</h4>
+                <h4>B.Tech in Computer Science and Engineering (AI &amp; ML)</h4>
                 <p class="edu-sub">JECRC University, Jaipur • 2025 - Present</p>
-                <p class="edu-desc">Coursework: Machine Learning Foundations, Data Structures & Algorithms, Python Programming, Database Management, and Full-Stack Web Development.</p>
+                <p class="edu-desc">Coursework: Machine Learning Foundations, Data Structures &amp; Algorithms, Python Programming, Database Management, and Full-Stack Web Development.</p>
               </div>
             </div>
             <div class="stats-row">
@@ -137,7 +186,7 @@
                 <span class="stat-label">Core Projects</span>
               </div>
               <div class="stat-box">
-                <span class="stat-num">AI & ML</span>
+                <span class="stat-num">AI &amp; ML</span>
                 <span class="stat-label">Specialization</span>
               </div>
               <div class="stat-box">
@@ -161,12 +210,12 @@
           <div class="skill-category reveal reveal-scale">
             <div class="skill-cat-header">
               <span class="skill-icon">🐍</span>
-              <h3>Languages & Foundations</h3>
+              <h3>Languages &amp; Foundations</h3>
             </div>
             <div class="skill-tags">
               <span class="skill-badge">Python</span>
               <span class="skill-badge">JavaScript (ES6+)</span>
-              <span class="skill-badge">HTML5 & CSS3</span>
+              <span class="skill-badge">HTML5 &amp; CSS3</span>
               <span class="skill-badge">SQL</span>
               <span class="skill-badge">Data Structures</span>
               <span class="skill-badge">Algorithms</span>
@@ -176,13 +225,13 @@
           <div class="skill-category reveal reveal-scale">
             <div class="skill-cat-header">
               <span class="skill-icon">🤖</span>
-              <h3>AI, ML & Developer Tools</h3>
+              <h3>AI, ML &amp; Developer Tools</h3>
             </div>
             <div class="skill-tags">
               <span class="skill-badge">Cursor AI</span>
               <span class="skill-badge">LLM APIs (Gemini)</span>
               <span class="skill-badge">Prompt Grounding</span>
-              <span class="skill-badge">Git & GitHub</span>
+              <span class="skill-badge">Git &amp; GitHub</span>
               <span class="skill-badge">VS Code</span>
               <span class="skill-badge">PEP 8 Standards</span>
             </div>
@@ -191,7 +240,7 @@
           <div class="skill-category reveal reveal-scale">
             <div class="skill-cat-header">
               <span class="skill-icon">🌐</span>
-              <h3>Web & Deployment</h3>
+              <h3>Web &amp; Deployment</h3>
             </div>
             <div class="skill-tags">
               <span class="skill-badge">Vercel Deployment</span>
@@ -231,8 +280,8 @@
           <div class="filter-buttons" id="filter-buttons">
             <button class="filter-btn active" data-filter="all">All Projects (5)</button>
             <button class="filter-btn" data-filter="python">Python</button>
-            <button class="filter-btn" data-filter="web">Web & JS</button>
-            <button class="filter-btn" data-filter="ai">AI & Cursor</button>
+            <button class="filter-btn" data-filter="web">Web &amp; JS</button>
+            <button class="filter-btn" data-filter="ai">AI &amp; Cursor</button>
           </div>
         </div>
 
@@ -307,7 +356,7 @@
             </div>
           </article>
 
-          <!-- Project 4 -->
+          <!-- Project 4 (Interactive Quiz Application) -->
           <article class="project-card reveal reveal-scale" data-category="web" data-keywords="interactive quiz application lecture 10 javascript html css dom score timer">
             <div class="project-card-header">
               <div class="project-icon">🎯</div>
@@ -385,7 +434,7 @@
                 <span class="c-icon">🎓</span>
                 <div>
                   <strong>University</strong>
-                  <p>JECRC University, Jaipur (B.Tech CSE - AI & ML)</p>
+                  <p>JECRC University, Jaipur (B.Tech CSE - AI &amp; ML)</p>
                 </div>
               </li>
               <li>
@@ -427,8 +476,9 @@
 
   <!-- Section 6: AI Portfolio Chatbot Widget (Task 6) -->
   <aside class="chatbot-wrapper" id="chatbot-wrapper">
-    <!-- Floating Launcher -->
+    <!-- Floating Launcher with Ripple Effect -->
     <button id="chatbot-toggle-btn" class="chatbot-launcher" aria-label="Open AI Assistant">
+      <span class="launcher-ripple"></span>
       <span class="launcher-icon">🤖</span>
       <span class="launcher-label">Ask Ambesh's AI</span>
     </button>
@@ -437,7 +487,7 @@
     <div id="chatbot-window" class="chatbot-window hidden" role="dialog" aria-labelledby="chat-heading">
       <div class="chat-header">
         <div class="chat-header-info">
-          <span class="bot-avatar">🤖</span>
+          <div class="bot-avatar-glow">🤖</div>
           <div>
             <h3 id="chat-heading">Ambesh's AI Assistant</h3>
             <span class="bot-status"><span class="status-dot"></span> Grounded in Portfolio Data</span>
@@ -459,7 +509,7 @@
       <!-- Messages Body -->
       <div class="chat-messages" id="chat-messages">
         <div class="chat-bubble bot-bubble">
-          Hello! I am Ambesh Mishra's portfolio assistant. Ask me about his education at JECRC University, his AI & ML specialization, his 5 projects, or his GitHub!
+          Hello! I am Ambesh Mishra's portfolio assistant. Ask me about his education at JECRC University, his AI &amp; ML specialization, his 5 projects, or his GitHub!
         </div>
       </div>
 
@@ -482,7 +532,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
-      <p>© 2026 Ambesh Mishra • JECRC University • Built with Cursor AI, HTML, CSS, JavaScript & Vercel</p>
+      <p>© 2026 Ambesh Mishra • JECRC University • Built with Cursor AI, HTML, CSS, JavaScript &amp; Vercel</p>
     </div>
   </footer>
 

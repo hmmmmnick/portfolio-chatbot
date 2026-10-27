@@ -1,10 +1,63 @@
 // ============================================================
-// 1. LIGHT / DARK MODE TOGGLE (TASK 3)
+// 1. SCROLL PROGRESS BAR & ACTIVE NAV HIGHLIGHT
+// ============================================================
+const progressBar = document.getElementById('scroll-progress');
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section');
+
+window.addEventListener('scroll', () => {
+  // Update progress bar
+  const winScroll = document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  if (progressBar) progressBar.style.width = scrolled + '%';
+
+  // Active navigation highlight based on scroll position
+  let currentSectionId = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 150;
+    if (winScroll >= sectionTop) {
+      currentSectionId = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${currentSectionId}`) {
+      link.classList.add('active');
+    }
+  });
+});
+
+// ============================================================
+// 2. SCROLL REVEAL OBSERVER (INTERSECTION OBSERVER)
+// ============================================================
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  },
+  {
+    root: null,
+    threshold: 0.12,
+    rootMargin: '0px 0px -50px 0px'
+  }
+);
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// ============================================================
+// 3. LIGHT / DARK MODE TOGGLE (TASK 3)
 // ============================================================
 const themeToggleBtn = document.getElementById('theme-toggle');
 
 const savedTheme = localStorage.getItem('ambesh-portfolio-theme') || 
-  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'dark'); // default dark for high-tech aesthetic
 
 document.documentElement.setAttribute('data-theme', savedTheme);
 
@@ -18,17 +71,18 @@ themeToggleBtn.addEventListener('click', () => {
 // Mobile menu toggle
 const mobileToggle = document.getElementById('mobile-toggle');
 const navMenu = document.getElementById('nav-menu');
-mobileToggle.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
-});
+if (mobileToggle && navMenu) {
+  mobileToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
 
-// Close mobile menu when clicking nav links
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', () => navMenu.classList.remove('active'));
-});
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => navMenu.classList.remove('active'));
+  });
+}
 
 // ============================================================
-// 2. PROJECT SEARCH AND FILTER (TASK 3)
+// 4. PROJECT SEARCH AND FILTER (TASK 3)
 // ============================================================
 const searchInput = document.getElementById('project-search');
 const clearSearchBtn = document.getElementById('clear-search');
@@ -40,7 +94,7 @@ let activeFilter = 'all';
 
 function filterProjects() {
   const query = searchInput.value.toLowerCase().trim();
-  clearSearchBtn.style.display = query ? 'block' : 'none';
+  if (clearSearchBtn) clearSearchBtn.style.display = query ? 'block' : 'none';
 
   let visibleCount = 0;
 
@@ -50,10 +104,7 @@ function filterProjects() {
     const cardKeywords = (card.getAttribute('data-keywords') || '').toLowerCase();
     const cardCategory = (card.getAttribute('data-category') || '').toLowerCase();
 
-    // Check category filter
     const matchesFilter = (activeFilter === 'all') || cardCategory.includes(activeFilter);
-
-    // Check search input against title, description, and keywords
     const matchesSearch = !query || 
       cardTitle.includes(query) || 
       cardDesc.includes(query) || 
@@ -61,26 +112,31 @@ function filterProjects() {
 
     if (matchesFilter && matchesSearch) {
       card.classList.remove('hidden');
+      card.classList.add('active'); // trigger reveal
       visibleCount++;
     } else {
       card.classList.add('hidden');
     }
   });
 
-  if (visibleCount === 0) {
-    noResultsDiv.classList.remove('hidden');
-  } else {
-    noResultsDiv.classList.add('hidden');
+  if (noResultsDiv) {
+    if (visibleCount === 0) {
+      noResultsDiv.classList.remove('hidden');
+    } else {
+      noResultsDiv.classList.add('hidden');
+    }
   }
 }
 
-searchInput.addEventListener('input', filterProjects);
+if (searchInput) searchInput.addEventListener('input', filterProjects);
 
-clearSearchBtn.addEventListener('click', () => {
-  searchInput.value = '';
-  filterProjects();
-  searchInput.focus();
-});
+if (clearSearchBtn) {
+  clearSearchBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    filterProjects();
+    searchInput.focus();
+  });
+}
 
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -92,7 +148,7 @@ filterBtns.forEach(btn => {
 });
 
 // ============================================================
-// 3. AI CHATBOT CONTROLLER (TASK 6)
+// 5. AI CHATBOT CONTROLLER (TASK 6)
 // ============================================================
 const chatbotLauncher = document.getElementById('chatbot-toggle-btn');
 const chatbotCloseBtn = document.getElementById('chatbot-close-btn');
@@ -116,8 +172,8 @@ function toggleChat(open = null) {
   }
 }
 
-chatbotLauncher.addEventListener('click', () => toggleChat());
-chatbotCloseBtn.addEventListener('click', () => toggleChat(false));
+if (chatbotLauncher) chatbotLauncher.addEventListener('click', () => toggleChat());
+if (chatbotCloseBtn) chatbotCloseBtn.addEventListener('click', () => toggleChat(false));
 if (openChatNav) openChatNav.addEventListener('click', () => toggleChat(true));
 if (heroChatTrigger) heroChatTrigger.addEventListener('click', () => toggleChat(true));
 
@@ -138,6 +194,35 @@ function appendBubble(text, sender = 'bot', isError = false) {
   return bubble;
 }
 
+// Local Grounded Knowledge Base (Fallback for instant offline response)
+function getLocalGroundedAnswer(query) {
+  const q = query.toLowerCase();
+
+  if (q.includes('who are you') || q.includes('about') || q.includes('introduce')) {
+    return "I am Ambesh Mishra's personal portfolio AI assistant. Ambesh is a B.Tech Computer Science student specializing in Artificial Intelligence & Machine Learning at JECRC University, Jaipur.";
+  }
+  if (q.includes('skill') || q.includes('technolog') || q.includes('stack')) {
+    return "Ambesh is proficient in Python, JavaScript, HTML5/CSS3, SQL, Cursor AI, Git/GitHub, Vercel deployment, REST APIs, and Machine Learning foundations.";
+  }
+  if (q.includes('project') || q.includes('completed')) {
+    return "Ambesh has completed 5 core projects: 1) Python Programs Collection, 2) Messy Python Code Improvement, 3) Bug Fixing Using Cursor AI, 4) Interactive Quiz Application (Lecture 10), and 5) Book Reading List Application (Lecture 11).";
+  }
+  if (q.includes('python program') || q.includes('factorial') || q.includes('fibonacci')) {
+    return "The Python Programs Collection features core algorithms: recursive/iterative Factorial, Fibonacci series generation, and Structure-to-Dictionary data serialization.";
+  }
+  if (q.includes('bug') || q.includes('cursor') || q.includes('corrected')) {
+    return "In the Bug Fixing project (Lecture 8), Ambesh used Cursor AI to perform root-cause analysis on an intentionally buggy codebase, resolving boundary conditions, division by zero, and grade sorting logic with 9 passing unit tests.";
+  }
+  if (q.includes('reading') || q.includes('book')) {
+    return "The Book Reading List Application (Lecture 11) is a responsive book manager with local storage persistence, book categorization, and reading progress filtering.";
+  }
+  if (q.includes('github')) {
+    return "You can explore all of Ambesh's projects on his GitHub profile at https://github.com/hmmmmnick.";
+  }
+
+  return "I am Ambesh Mishra's portfolio assistant. You can ask me about his B.Tech studies at JECRC University, his technical skills, his 5 projects, or his GitHub repositories!";
+}
+
 chatForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const userText = chatInput.value.trim();
@@ -147,7 +232,7 @@ chatForm.addEventListener('submit', async (e) => {
   appendBubble(userText, 'user');
   chatInput.value = '';
 
-  // Render Temporary Thinking Bubble
+  // Render Thinking Bubble
   const loadingBubble = appendBubble('Thinking...', 'bot');
 
   try {
@@ -157,16 +242,17 @@ chatForm.addEventListener('submit', async (e) => {
       body: JSON.stringify({ message: userText })
     });
 
-    const data = await response.json();
-
-    if (!response.ok) {
-      throw new Error(data.error || 'Failed to fetch response from API');
+    if (response.ok) {
+      const data = await response.json();
+      loadingBubble.textContent = data.reply;
+      return;
     }
-
-    loadingBubble.textContent = data.reply;
+    
+    throw new Error('Local environment detected');
   } catch (err) {
-    console.error('Chatbot API Error:', err);
-    loadingBubble.className = 'chat-bubble bot-bubble error-bubble';
-    loadingBubble.textContent = `Error: ${err.message || 'Unable to connect to AI server. Please verify network or API keys.'}`;
+    // Seamless grounded fallback
+    setTimeout(() => {
+      loadingBubble.textContent = getLocalGroundedAnswer(userText);
+    }, 350);
   }
 });

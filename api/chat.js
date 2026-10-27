@@ -26,7 +26,7 @@ export default async function handler(req, res) {
   - University: JECRC University, Jaipur
   - Degree: B.Tech in Computer Science and Engineering with Specialization in Artificial Intelligence and Machine Learning (AI & ML)
   - GitHub Profile: https://github.com/hmmmmnick
-  - Email: ambesh.mishra@jecrcu.edu.in
+  - Email: mishraambeshkk@gmail.com
   - Core Technical Skills: Python, JavaScript, HTML5, CSS3, SQL, Cursor AI, Git/GitHub, Vercel, REST APIs, Object-Oriented Programming, and Machine Learning concepts.
   
   2. The 5 Completed Projects:
