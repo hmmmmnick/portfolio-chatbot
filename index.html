@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Navigation Header -->
@@ -44,33 +44,69 @@
   <main>
     <!-- Section 1: Home / Hero -->
     <section id="home" class="hero-section">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-alt" aria-hidden="true"></div>
+      <div class="hero-grid-overlay" aria-hidden="true"></div>
+
       <div class="hero-container">
-        <div class="hero-badge">🚀 AI & Machine Learning Specialization • JECRC University</div>
-        <h1 class="hero-title">
-          Hi, I'm <span class="highlight-text">Ambesh Mishra</span>
-        </h1>
-        <p class="hero-subtitle">
-          B.Tech in Computer Science and Engineering (AI & ML). Building modern software solutions, machine learning models, and interactive web applications using Python, JavaScript, and modern AI tooling.
-        </p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View My Projects</a>
-          <button id="hero-chat-trigger" class="btn btn-secondary">💬 Chat with My AI</button>
-          <a href="https://github.com/hmmmmnick" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-            GitHub (@hmmmmnick)
-          </a>
+        <div class="hero-copy">
+          <div class="hero-badge">
+            <span class="badge-dot" aria-hidden="true"></span>
+            Open to internships · AI &amp; ML · JECRC University
+          </div>
+          <h1 class="hero-title">
+            Hi, I'm <span class="highlight-text">Ambesh Mishra</span>
+          </h1>
+          <p class="hero-role">B.Tech CSE student building intelligent products with Python and the web.</p>
+          <p class="hero-subtitle">
+            Specializing in Artificial Intelligence and Machine Learning. I ship software, train models, and design interactive apps with Python, JavaScript, and modern AI tooling.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View my projects</a>
+            <button id="hero-chat-trigger" class="btn btn-secondary">Chat with my AI</button>
+            <a href="https://github.com/hmmmmnick" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              GitHub
+            </a>
+          </div>
+          <ul class="hero-stack" aria-label="Core technologies">
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>HTML &amp; CSS</li>
+            <li>Cursor AI</li>
+            <li>Vercel</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-window">
+            <div class="hero-window-bar">
+              <span></span><span></span><span></span>
+              <p>profile.ts</p>
+            </div>
+            <pre class="hero-code"><code><span class="code-kw">const</span> engineer = {
+  name: <span class="code-str">"Ambesh Mishra"</span>,
+  school: <span class="code-str">"JECRC University"</span>,
+  focus: [<span class="code-str">"AI"</span>, <span class="code-str">"ML"</span>, <span class="code-str">"Web"</span>],
+  building: <span class="code-str">"useful software"</span>
+};</code></pre>
+          </div>
         </div>
       </div>
+
+      <a href="#about" class="hero-scroll" aria-label="Scroll to about">
+        <span>Scroll</span>
+      </a>
     </section>
 
     <!-- Section 2: About Me (Task 1) -->
     <section id="about" class="about-section">
       <div class="section-container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <span class="section-tag">Background</span>
           <h2 class="section-title">About Me</h2>
         </div>
         <div class="about-grid">
-          <div class="about-image-wrapper">
+          <div class="about-image-wrapper reveal reveal-left">
             <img 
               src="https://images.unsplash.com/photo-1534972195531-a756b1129f63?auto=format&fit=crop&w=600&q=80" 
               alt="Profile photograph of Ambesh Mishra" 
@@ -79,7 +115,7 @@
             />
             <p class="img-caption">Ambesh Mishra • Student Developer</p>
           </div>
-          <div class="about-content">
+          <div class="about-content reveal reveal-right">
             <h3>Passionate about Intelligent Systems & Clean Engineering</h3>
             <p>
               I am an undergraduate student pursuing my <strong>B.Tech in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning</strong> at <strong>JECRC University</strong>. 
@@ -91,7 +127,7 @@
               <div class="edu-icon">🎓</div>
               <div>
                 <h4>B.Tech in Computer Science and Engineering (AI & ML)</h4>
-                <p class="edu-sub">JECRC University, Jaipur • 2023 - Present</p>
+                <p class="edu-sub">JECRC University, Jaipur • 2025 - Present</p>
                 <p class="edu-desc">Coursework: Machine Learning Foundations, Data Structures & Algorithms, Python Programming, Database Management, and Full-Stack Web Development.</p>
               </div>
             </div>
@@ -117,12 +153,12 @@
     <!-- Section 3: Technical Skills -->
     <section id="skills" class="skills-section">
       <div class="section-container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <span class="section-tag">Capabilities</span>
           <h2 class="section-title">Technical Skills</h2>
         </div>
         <div class="skills-grid">
-          <div class="skill-category">
+          <div class="skill-category reveal reveal-scale">
             <div class="skill-cat-header">
               <span class="skill-icon">🐍</span>
               <h3>Languages & Foundations</h3>
@@ -137,7 +173,7 @@
             </div>
           </div>
 
-          <div class="skill-category">
+          <div class="skill-category reveal reveal-scale">
             <div class="skill-cat-header">
               <span class="skill-icon">🤖</span>
               <h3>AI, ML & Developer Tools</h3>
@@ -152,7 +188,7 @@
             </div>
           </div>
 
-          <div class="skill-category">
+          <div class="skill-category reveal reveal-scale">
             <div class="skill-cat-header">
               <span class="skill-icon">🌐</span>
               <h3>Web & Deployment</h3>
@@ -173,14 +209,14 @@
     <!-- Section 4: Projects (Task 2 & 3: Search, Filter, All 5 Projects) -->
     <section id="projects" class="projects-section">
       <div class="section-container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <span class="section-tag">Portfolio Showcase</span>
           <h2 class="section-title">My Projects</h2>
           <p class="section-desc">Search or filter through the five required coursework projects developed across our lectures.</p>
         </div>
 
         <!-- Search & Filter Controls -->
-        <div class="search-filter-wrapper">
+        <div class="search-filter-wrapper reveal">
           <div class="search-input-box">
             <span class="search-icon">🔍</span>
             <input 
@@ -204,7 +240,7 @@
         <div class="projects-grid" id="projects-grid">
           
           <!-- Project 1 -->
-          <article class="project-card" data-category="python" data-keywords="python programs collection factorial fibonacci structure dictionary recursion algorithm">
+          <article class="project-card reveal reveal-scale" data-category="python" data-keywords="python programs collection factorial fibonacci structure dictionary recursion algorithm">
             <div class="project-card-header">
               <div class="project-icon">🔢</div>
               <span class="project-type">Python Collection</span>
@@ -226,7 +262,7 @@
           </article>
 
           <!-- Project 2 -->
-          <article class="project-card" data-category="python ai" data-keywords="messy python code improvement ai refactoring clean code pep8 cursor optimization">
+          <article class="project-card reveal reveal-scale" data-category="python ai" data-keywords="messy python code improvement ai refactoring clean code pep8 cursor optimization">
             <div class="project-card-header">
               <div class="project-icon">⚡</div>
               <span class="project-type">Code Optimization</span>
@@ -249,7 +285,7 @@
           </article>
 
           <!-- Project 3 -->
-          <article class="project-card" data-category="ai python" data-keywords="bug fixing cursor ai debugging stack trace logic error unit tests">
+          <article class="project-card reveal reveal-scale" data-category="ai python" data-keywords="bug fixing cursor ai debugging stack trace logic error unit tests">
             <div class="project-card-header">
               <div class="project-icon">🛠️</div>
               <span class="project-type">Debugging with Cursor</span>
@@ -272,7 +308,7 @@
           </article>
 
           <!-- Project 4 -->
-          <article class="project-card" data-category="web" data-keywords="interactive quiz application lecture 10 javascript html css dom score timer">
+          <article class="project-card reveal reveal-scale" data-category="web" data-keywords="interactive quiz application lecture 10 javascript html css dom score timer">
             <div class="project-card-header">
               <div class="project-icon">🎯</div>
               <span class="project-type">Lecture 10 Project</span>
@@ -291,14 +327,14 @@
               <a href="https://github.com/hmmmmnick/interactive-quiz-app" target="_blank" rel="noopener noreferrer" class="link-btn github-link">
                 GitHub Repo ↗
               </a>
-              <a href="https://hmmmmnick-quiz-app.vercel.app" target="_blank" rel="noopener noreferrer" class="link-btn live-link">
+              <a href="https://portfolio-chatbot-cgrt.vercel.app/" target="_blank" rel="noopener noreferrer" class="link-btn live-link">
                 Live App ↗
               </a>
             </div>
           </article>
 
           <!-- Project 5 -->
-          <article class="project-card" data-category="web" data-keywords="book reading list application lecture 11 localstorage deployed library tracker crud">
+          <article class="project-card reveal reveal-scale" data-category="web" data-keywords="book reading list application lecture 11 localstorage deployed library tracker crud">
             <div class="project-card-header">
               <div class="project-icon">📚</div>
               <span class="project-type">Lecture 11 Project</span>
@@ -334,12 +370,12 @@
     <!-- Section 5: Contact Information -->
     <section id="contact" class="contact-section">
       <div class="section-container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <span class="section-tag">Get in Touch</span>
           <h2 class="section-title">Contact Information</h2>
         </div>
         <div class="contact-grid">
-          <div class="contact-info">
+          <div class="contact-info reveal reveal-left">
             <h3>Let's Connect</h3>
             <p>
               I am open to discussions regarding AI/ML projects, software development internships, and collaborative research. Reach out directly or check out my repositories.
@@ -363,13 +399,13 @@
                 <span class="c-icon">📧</span>
                 <div>
                   <strong>Email</strong>
-                  <a href="mailto:ambesh.mishra@jecrcu.edu.in">ambesh.mishra@jecrcu.edu.in</a>
+                  <a href="mailto:mishraambeshkk@gmail.com">mishraambeshkk@gmail.com</a>
                 </div>
               </li>
             </ul>
           </div>
 
-          <form class="contact-form" id="contact-form" onsubmit="event.preventDefault(); alert('Thank you, Ambesh will get back to you shortly!');">
+          <form class="contact-form reveal reveal-right" id="contact-form" onsubmit="event.preventDefault(); alert('Thank you, Ambesh will get back to you shortly!');">
             <div class="form-group">
               <label for="contact-name">Your Name</label>
               <input type="text" id="contact-name" placeholder="John Doe" required />
